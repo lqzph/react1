@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>入门</title>
+    <script src="node_modules/react/dist/react.min.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+    <!--<script src="http://static.runoob.com/assets/react/browser.min.js"></script>-->
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="aa"></div>
+
+
+<!--添加事件-->
+
+<script type="text/babel">
+    class Click extends React.Component{
+        constructor(){
+            super();
+            this.state={name:"zhangsan"}
+        }
+        change(){
+            this.setState({name:"lisi"})
+        }
+        render(){
+            return <div onClick={this.change.bind(this)}>{this.state.name}</div>
+        }
+    }
+    ReactDOM.render(<Click/>,document.getElementById("aa"))
+</script>
+</body>
+</html>

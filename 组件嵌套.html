@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>入门</title>
+    <script src="node_modules/react/dist/react.min.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.min.js"></script>
+    <!--<script src="http://static.runoob.com/assets/react/browser.min.js"></script>-->
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="aa"></div>
+
+<!--组件的嵌套-->
+<script type="text/babel">
+    class Father extends React.Component{
+        render(){
+            return <ul>
+                <Son></Son>
+                <Son1></Son1>
+            </ul>
+        }
+    }
+    class Son extends React.Component{
+        render(){
+            return <li>111111</li>
+        }
+    }
+    class Son1 extends React.Component{
+        render(){
+            return <li>22222</li>
+        }
+    }
+    ReactDOM.render(<Father/>,document.getElementById("aa"))
+</script>
+
+
+
+
+</body>
+</html>
+
